@@ -1,16 +1,22 @@
 package model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "clientes")
-public class Cliente {
+public class Cliente implements Serializable{
 	
 	@Id
 	private int id;
+	
+	@OneToMany (mappedBy="vendas")
+	
 	@Column
 	private String nome;
 	@Column

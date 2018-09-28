@@ -1,28 +1,25 @@
 package controller;
 
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import model.Cliente;
 
-/**
- * Hello world!
- *
- */
-public class ClJpaDAO 
+public class ClienteJpaDAO 
 {
-    private static ClJpaDAO instance;
+    private static ClienteJpaDAO instance;
     protected EntityManager entityManager;
     
-    public static ClJpaDAO getInstance() {
+    public static ClienteJpaDAO getInstance() {
     	if(instance == null) {
-    		instance = new ClJpaDAO();
+    		instance = new ClienteJpaDAO();
     	}
     	return instance;
     }
-    private ClJpaDAO() {entityManager = getEntityManager();}
+    private ClienteJpaDAO() {entityManager = getEntityManager();}
     
     private EntityManager getEntityManager() {
     	

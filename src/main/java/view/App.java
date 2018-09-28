@@ -1,6 +1,6 @@
 package view;
 
-import controller.ClJpaDAO;
+import controller.ClienteJpaDAO;
 import model.Cliente;
 
 public class App {
@@ -12,8 +12,7 @@ public class App {
 		c.setId(1);
 		c.setNome("Eduardo Lima");
 		c.setRg("26.719.813-9");
-		ClJpaDAO.getInstance().merge(c);
+		ClienteJpaDAO.getInstance().merge(c);
 		System.out.println("Parabéns tu é bixão!");
 	}
-
 }
