@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,30 +18,34 @@ public class Vendas {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id_venda;
 	
-	
-	@ManyToOne
+	//REALCIONAMENTO 1 > 1
+	@OneToOne (mappedBy="id_cliente")
 	private Cliente cliente;
 	
 	@Column
-	private Date data;
+	private String data;
 	@Column
 	private Double valorTotal;
 	@Column
 	private Double valorPago;
 	@Column
 	private Double desconto;
-	
-	
 	public Integer getId_venda() {
 		return id_venda;
 	}
-	public void setId_venda(int id_venda) {
+	public void setId_venda(Integer id_venda) {
 		this.id_venda = id_venda;
 	}
-	public Date getData() {
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public Double getValorTotal() {

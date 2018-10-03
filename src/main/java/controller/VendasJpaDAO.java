@@ -36,7 +36,7 @@ public class VendasJpaDAO
     
     @SuppressWarnings("unchecked")
     public List<Vendas> findAll(){
-    	return entityManager.createQuery("FROM" + Vendas.class.getId_venda()).getResultList();
+    	return entityManager.createQuery("FROM" + Vendas.class.getName()).getResultList();
     }
     
     public void persist(Vendas v) {
